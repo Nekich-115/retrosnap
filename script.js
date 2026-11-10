@@ -267,7 +267,7 @@ function drawWatermark(ctx, width, height) {
     ctx.textBaseline = "bottom";
     ctx.shadowColor = "rgba(0,0,0,0.8)";
     ctx.shadowBlur = 4;
-    ctx.fillText("RetroSnap", width - 15, height - 15);
+    ctx.fillText("RetroSnap Studio", width - 15, height - 15);
     ctx.restore();
 }
 
