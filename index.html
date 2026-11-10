@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101014">
+    <title>RetroSnap — Make every moment vintage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="#">
+            <span>Retro<span class="brand-accent">Snap</span></span>
+        </a>
+        <span class="topbar-caption">MAKE EVERY MOMENT VINTAGE</span>
+    </header>
+
+    <main class="app">
+        <section class="welcome" id="welcomeScreen">
+            <div class="eyebrow">YOUR DIGITAL FILM LAB</div>
+            <h1>Give your memories<br><span>a different look.</span></h1>
+            <p class="welcome-description">
+                Turn ordinary photos and videos into something unforgettable.
+            </p>
+
+            <!-- Текст изменен на "Выбрать из медиатеки" -->
+            <label class="upload-card" for="fileInput">
+                <span class="upload-icon">＋</span>
+                <strong>Выбрать из медиатеки</strong>
+                <span>Загрузите фото или видео с устройства</span>
+                <span class="upload-formats">JPG · PNG · WEBP · MP4 · MOV</span>
+            </label>
+
+            <input
+                type="file"
+                id="fileInput"
+                accept="image/*,video/*"
+                hidden
+            >
+            <p class="privacy-note">Ваши файлы обрабатываются прямо в браузере.</p>
+        </section>
+
+        <section class="editor hidden" id="editorScreen">
+            <div class="editor-heading">
+                <div>
+                    <div class="eyebrow">RETROSNAP STUDIO</div>
+                    <h2>Your creative space</h2>
+                    <p id="fileName">Ваш файл</p>
+                </div>
+                <button class="text-button" id="changeFileButton" type="button">
+                    ← Другой файл
+                </button>
+            </div>
+
+            <div class="workspace">
+                <div class="preview-panel">
+                    <div class="preview-topline">
+                        <span>PREVIEW</span>
+                        <span class="live-indicator">● LIVE</span>
+                    </div>
+
+                    <div class="canvas-stage" id="canvasStage">
+                        <canvas id="editorCanvas"></canvas>
+                        <div class="empty-preview" id="emptyPreview">
+                            Ваш результат появится здесь
+                        </div>
+                    </div>
+
+                    <video id="sourceVideo" playsinline muted hidden></video>
+
+                    <div class="video-controls hidden" id="videoControls">
+                        <button type="button" id="playButton">▶</button>
+                        <span id="videoTime">00:00</span>
+                        <input id="videoSeek" type="range" min="0" max="100" value="0">
+                        <button type="button" id="muteButton">Звук выкл.</button>
+                    </div>
+
+                    <div class="preview-actions">
+                        <button type="button" class="secondary-button" id="resetButton">
+                            Сбросить стиль
+                        </button>
+                        <button type="button" class="primary-button" id="downloadButton">
+                            Скачать результат ↓
+                        </button>
+                    </div>
+
+                    <p class="export-note" id="exportNote"></p>
+                </div>
+
+                <aside class="presets-panel">
+                    <div class="panel-heading">
+                        <div>
+                            <div class="eyebrow">CURATED LOOKS</div>
+                            <h3>Выбери настроение</h3>
+                        </div>
+                        <span class="preset-count">10 LOOKS</span>
+                    </div>
+
+                    <div class="preset-grid" id="presetGrid">
+                        <!-- Стили сгенерируются через JavaScript -->
+                    </div>
+
+                    <div class="intensity-control">
+                        <label for="intensity">
+                            <span>Интенсивность</span>
+                            <output id="intensityValue">100%</output>
+                        </label>
+                        <input type="range" id="intensity" min="0" max="100" value="100">
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <span>RETROSNAP © 2026</span>
+        <span>MADE FOR YOUR MEMORIES</span>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
